@@ -16,7 +16,7 @@ interface Person {
 }
 
 type PersonKeys = keyof Person; 
-// Equivalent to: "name" | "age" | "location"
+Equivalent to: "name" | "age" | "location"
 Here, PersonKeys becomes a type that can only be "name", "age", or "location".
 
 Why Is This Useful?
@@ -38,8 +38,8 @@ const person: Person = {
   location: "New York"
 };
 
-const name = getProperty(person, "name"); // Works
-const email = getProperty(person, "email"); // Error: "email" doesn't exist
+const name = getProperty(person, "name"); 
+const email = getProperty(person, "email");
 Common Use Cases
 Type-safe property access: Like in the example above
 
@@ -59,6 +59,8 @@ The keyof operator is a small but powerful part of TypeScript that helps catch e
 
 
 
+
+
 # What is type inference in TypeScript? Why is it helpful?
 
 Type inference is TypeScript's ability to automatically determine (or "guess") the types of variables, expressions, and function return values when you don't explicitly specify them. This feature makes TypeScript both powerful and convenient to use.
@@ -67,25 +69,24 @@ How Type Inference Works
 TypeScript looks at how you initialize variables and use values, then figures out the appropriate types:
 
 typescript
-let age = 25;          // TypeScript infers `number`
-let name = "Alice";    // Infers `string`
-let isActive = true;   // Infers `boolean`
+let age = 25;          
+let name = "Alice";    
+let isActive = true;   
 
-const numbers = [1, 2, 3];  // Infers `number[]`
+const numbers = [1, 2, 3]; 
 Why Type Inference is Helpful
 Less Typing: You don't need to write types everywhere
 
 typescript
-// Without inference (more typing)
 let count: number = 0;
 
-// With inference (cleaner)
+
 let count = 0;
 Maintains Type Safety: Even without explicit types, you get the same protection
 
 typescript
 let score = 100;
-score = "high"; // Error: Type 'string' is not assignable to type 'number'
+score = "high"; 
 Works with Complex Objects:
 
 typescript
@@ -93,18 +94,18 @@ const user = {
   name: "Bob",
   age: 30
 };
-// TypeScript knows user has .name (string) and .age (number)
-Smart Function Return Types:
+
+## Smart Function Return Types:
 
 typescript
 function add(a: number, b: number) {
-  return a + b;  // Return type inferred as number
+  return a + b; 
 }
 Contextual Typing (for callbacks):
 
 typescript
 const names = ["Alice", "Bob", "Charlie"];
-names.map(name => name.toUpperCase()); // TypeScript knows `name` is a string
+names.map(name => name.toUpperCase()); 
 When You Might Want Explicit Types
 While inference is powerful, sometimes being explicit helps:
 
@@ -117,5 +118,5 @@ For documentation purposes
 When the inferred type isn't specific enough
 
 typescript
-let items: string[];  // Explicit because we're not initializing
+let items: string[]; 
 items = ["apples", "oranges"];
