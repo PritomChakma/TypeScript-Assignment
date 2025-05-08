@@ -95,7 +95,7 @@ const user = {
   age: 30
 };
 
-## Smart Function Return Types:
+Smart Function Return Types:
 
 typescript
 function add(a: number, b: number) {
